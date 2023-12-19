@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddhvuuoinmkjc"]
+
+[ext_resource type="PackedScene" uid="uid://dgcxec0pgw3hh" path="res://scenes/game/world/presents/present_bg1.tscn" id="1_j48il"]
+[ext_resource type="PackedScene" uid="uid://dha76ekp26brc" path="res://scenes/game/world/presents/present_go1.tscn" id="2_enqyf"]
+[ext_resource type="PackedScene" uid="uid://c7tgtihrw2rb6" path="res://scenes/game/world/presents/present_wr2.tscn" id="2_hdxfg"]
+[ext_resource type="PackedScene" uid="uid://dx4eiqgmk2ncw" path="res://scenes/game/world/presents/present_yb3.tscn" id="3_dl3ii"]
+[ext_resource type="PackedScene" uid="uid://bwxs0ds38sk7a" path="res://scenes/game/world/presents/present_pry2.tscn" id="4_wnmkw"]
+
+[node name="Presents" type="Node2D"]
+
+[node name="Present-BG1" parent="." instance=ExtResource("1_j48il")]
+position = Vector2(171, 297)
+
+[node name="Present-BG2" parent="." instance=ExtResource("2_enqyf")]
+
+[node name="Present-BG3" parent="." instance=ExtResource("1_j48il")]
+position = Vector2(144, 572)
+
+[node name="Present-WR1" parent="." instance=ExtResource("2_hdxfg")]
+position = Vector2(256, 162)
+
+[node name="Present-WR2" parent="." instance=ExtResource("2_hdxfg")]
+position = Vector2(318, 315)
+
+[node name="Present-WR3" parent="." instance=ExtResource("2_hdxfg")]
+position = Vector2(626, 556)
+
+[node name="Present-YB3" parent="." instance=ExtResource("3_dl3ii")]
+position = Vector2(490, 435)
+
+[node name="Present-YB4" parent="." instance=ExtResource("3_dl3ii")]
+position = Vector2(150, 41)
+
+[node name="Present-PrY2" parent="." instance=ExtResource("4_wnmkw")]
+position = Vector2(563, 225)

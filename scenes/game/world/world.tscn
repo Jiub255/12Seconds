@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddr8kcxtd5pao"]
+
+[ext_resource type="Script" path="res://scenes/game/world/world.gd" id="1_dpxre"]
+[ext_resource type="Texture2D" uid="uid://4gh0q2o0yvko" path="res://assets/visual/Christmasassetpack/christmas-ui/pngs/horizontal-2048-by-1536.png" id="2_3d1qt"]
+[ext_resource type="Texture2D" uid="uid://jpno8g10ybre" path="res://assets/visual/Christmasassetpack/christmas assets/outline/christmas-tree-with-outline.png" id="3_yajgs"]
+[ext_resource type="Texture2D" uid="uid://rtyi0cwgmcb0" path="res://assets/visual/Christmasassetpack/christmas assets/outline/candy-cane-with-outline.png" id="4_3a87j"]
+[ext_resource type="PackedScene" uid="uid://ddhvuuoinmkjc" path="res://scenes/game/world/presents/presents1.tscn" id="5_5obxk"]
+[ext_resource type="PackedScene" uid="uid://ctiq6viks78rn" path="res://scenes/game/world/camera/camera.tscn" id="7_gbmdd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n04q"]
+size = Vector2(1138.92, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7uifd"]
+size = Vector2(28.6109, 663.763)
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_dpxre")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(548, -109)
+scale = Vector2(1.015, 1.015)
+texture = ExtResource("2_3d1qt")
+
+[node name="ChristmasTree" type="Sprite2D" parent="Background"]
+position = Vector2(417.734, 435.468)
+scale = Vector2(0.595, 0.595)
+texture = ExtResource("3_yajgs")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 10000)
+target_position = Vector2(1200, 0)
+
+[node name="ColorRect" type="ColorRect" parent="RayCast2D"]
+visible = false
+offset_right = 1193.0
+offset_bottom = 7.0
+mouse_filter = 2
+color = Color(0.360784, 0.533333, 0.0313726, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="RayCast2D"]
+z_index = 1
+rotation = -1.5708
+texture = ExtResource("4_3a87j")
+offset = Vector2(31.56, 444)
+flip_h = true
+
+[node name="Presents" parent="." instance=ExtResource("5_5obxk")]
+
+[node name="Camera2D" parent="." instance=ExtResource("7_gbmdd")]
+position_smoothing_speed = 20.0
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(576, 652.86)
+scale = Vector2(1.015, 1.015)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_0n04q")
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2(-15, -332)
+scale = Vector2(1, 3)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+shape = SubResource("RectangleShape2D_7uifd")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(1167, -332)
+scale = Vector2(1, 3)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+shape = SubResource("RectangleShape2D_7uifd")

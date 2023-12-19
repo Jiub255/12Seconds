@@ -1,0 +1,554 @@
+[gd_scene load_steps=24 format=3 uid="uid://cumh0031c7ka3"]
+
+[ext_resource type="Script" path="res://scenes/game/ui/ui.gd" id="1_7lthn"]
+[ext_resource type="Texture2D" uid="uid://dcskljcd6bixe" path="res://assets/visual/Christmasassetpack/round-ice-buttons/no-snow/blank.png" id="2_72jp6"]
+[ext_resource type="Texture2D" uid="uid://4gh0q2o0yvko" path="res://assets/visual/Christmasassetpack/christmas-ui/pngs/horizontal-2048-by-1536.png" id="3_7q3id"]
+[ext_resource type="Script" path="res://scenes/game/ui/high_scores_control.gd" id="3_yy52r"]
+[ext_resource type="StyleBox" uid="uid://biflp58s1tmrx" path="res://scenes/game/ui/button-stylebox-hover.tres" id="4_tphic"]
+[ext_resource type="StyleBox" uid="uid://dopj44xrked6g" path="res://scenes/game/ui/button-stylebox-pressed.tres" id="5_v6bgh"]
+[ext_resource type="StyleBox" uid="uid://befktodggruup" path="res://scenes/game/ui/game-title-stylebox.tres" id="8_k3uo7"]
+[ext_resource type="StyleBox" uid="uid://c7gu1ssuvhxc8" path="res://scenes/game/ui/button-stylebox.tres" id="9_py7vn"]
+[ext_resource type="Texture2D" uid="uid://duf3wciwaswkw" path="res://assets/visual/Christmasassetpack/christmas assets/outline/triple-holly-leaf-with-outline.png" id="10_qp335"]
+[ext_resource type="Texture2D" uid="uid://dlr44ph2fp2vi" path="res://assets/visual/Christmasassetpack/christmas assets/outline/double-holly-leaf-with-outline.png" id="11_blrgy"]
+[ext_resource type="Texture2D" uid="uid://b0mgoxwyiffah" path="res://assets/visual/Christmasassetpack/christmas assets/outline/cake-with-outline.png" id="12_rif3n"]
+[ext_resource type="Texture2D" uid="uid://ti4dwe4p06s0" path="res://assets/visual/Christmasassetpack/christmas assets/outline/filled-stocking.png" id="13_f0blx"]
+[ext_resource type="Texture2D" uid="uid://jpno8g10ybre" path="res://assets/visual/Christmasassetpack/christmas assets/outline/christmas-tree-with-outline.png" id="14_cfuae"]
+[ext_resource type="Texture2D" uid="uid://rtyi0cwgmcb0" path="res://assets/visual/Christmasassetpack/christmas assets/outline/candy-cane-with-outline.png" id="15_sp5t2"]
+[ext_resource type="Texture2D" uid="uid://8wco2e0sdl5e" path="res://assets/visual/Christmasassetpack/presents/pngs/outlined/blue-green-ribbon-3.png" id="16_rubbm"]
+[ext_resource type="Texture2D" uid="uid://d31wu6oj4hocy" path="res://assets/visual/Christmasassetpack/presents/pngs/outlined/brown-green-ribbon-1.png" id="17_jh6rq"]
+[ext_resource type="Texture2D" uid="uid://dgtm1sx2usdlm" path="res://assets/visual/Christmasassetpack/presents/pngs/outlined/purple-yellow-ribbon-3.png" id="18_ifpdk"]
+[ext_resource type="Texture2D" uid="uid://dkcl8wlktwpll" path="res://assets/visual/Christmasassetpack/presents/pngs/outlined/green-orange-ribbon-2.png" id="19_twshw"]
+[ext_resource type="Texture2D" uid="uid://vxy220lcv087" path="res://assets/visual/Christmasassetpack/presents/pngs/outlined/yellow-blue-ribbon-1.png" id="20_cpilx"]
+[ext_resource type="Texture2D" uid="uid://ehdathunchry" path="res://assets/visual/Christmasassetpack/presents/pngs/outlined/white-red-ribbon-2.png" id="21_lka1a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wtaih"]
+font_size = 115
+font_color = Color(0.00784314, 0.101961, 0, 1)
+outline_size = 7
+outline_color = Color(0.847059, 1, 0.807843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ho65m"]
+font_size = 50
+font_color = Color(0.835294, 1, 0.843137, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ko05i"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+bg_color = Color(0.145098, 0.454902, 0.180392, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_bottom_right = 16
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_7lthn")
+
+[node name="TimerControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Clock" type="TextureProgressBar" parent="TimerControl"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+offset_right = 256.0
+offset_bottom = 256.0
+fill_mode = 4
+texture_progress = ExtResource("2_72jp6")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(0.309804, 0.45098, 0.25098, 1)
+
+[node name="Timer" type="Label" parent="TimerControl/Clock"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -416.0
+offset_top = 49.0
+offset_right = 672.0
+offset_bottom = 206.0
+label_settings = SubResource("LabelSettings_wtaih")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HeightCounterControl" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HeightCounter" type="Label" parent="HeightCounterControl"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 27.0
+offset_top = 28.0
+offset_right = 1115.0
+offset_bottom = 97.0
+label_settings = SubResource("LabelSettings_ho65m")
+
+[node name="HighScoresButtonControl" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="EndGameButton" type="Button" parent="HighScoresButtonControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.388021
+anchor_top = 0.444444
+anchor_right = 0.611979
+anchor_bottom = 0.555556
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 86.0416
+offset_bottom = 22.5555
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = ExtResource("9_py7vn")
+theme_override_styles/hover = ExtResource("4_tphic")
+theme_override_styles/pressed = ExtResource("5_v6bgh")
+text = "High Scores"
+metadata/_edit_use_anchors_ = true
+
+[node name="HighScoresControl" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_yy52r")
+
+[node name="Background" type="TextureRect" parent="HighScoresControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7q3id")
+expand_mode = 1
+
+[node name="HighScoresTitle" type="Label" parent="HighScoresControl/Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.118827
+anchor_right = 1.0
+anchor_bottom = 0.148148
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "High Scores"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LoadingLabel" type="Label" parent="HighScoresControl/Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.5
+offset_top = -33.5
+offset_right = 124.5
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ko05i")
+text = "Loading scores..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HighScoresControl/Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.223765
+anchor_right = 1.0
+anchor_bottom = 0.938272
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 7
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayAgainButton" type="Button" parent="HighScoresControl/Background"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 46.0
+offset_top = 146.0
+offset_right = 149.0
+offset_bottom = 257.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = ExtResource("9_py7vn")
+theme_override_styles/hover = ExtResource("4_tphic")
+theme_override_styles/pressed = ExtResource("5_v6bgh")
+text = "Main
+Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="MeasurementControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MeasurementControl"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -133.0
+offset_top = -56.0
+offset_right = -24.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="MeasurementControl/HBoxContainer"]
+layout_mode = 2
+text = "ft/in"
+
+[node name="CheckButton" type="CheckButton" parent="MeasurementControl/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MeasurementControl/HBoxContainer"]
+layout_mode = 2
+text = "cm"
+
+[node name="MainMenuControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MainMenuControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="MainMenuControl/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7q3id")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuControl/ColorRect/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -458.0
+offset_top = -204.0
+offset_right = 458.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="GameTitleLabel" type="Label" parent="MainMenuControl/ColorRect/TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(255, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("8_k3uo7")
+text = "12 Second Stack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(5, 25)
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="MainMenuControl/ColorRect/TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = ExtResource("9_py7vn")
+theme_override_styles/hover = ExtResource("4_tphic")
+theme_override_styles/pressed = ExtResource("5_v6bgh")
+text = "Play"
+
+[node name="HighScoresButton" type="Button" parent="MainMenuControl/ColorRect/TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = ExtResource("9_py7vn")
+theme_override_styles/hover = ExtResource("4_tphic")
+theme_override_styles/pressed = ExtResource("5_v6bgh")
+text = "High Scores"
+
+[node name="DecorationsControl" type="Control" parent="MainMenuControl/ColorRect/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Holly3" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0390625
+anchor_top = -0.037037
+anchor_right = 0.101562
+anchor_bottom = 0.234568
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_qp335")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Holly2" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.425347
+anchor_top = -0.0138889
+anchor_right = 0.577257
+anchor_bottom = 0.16358
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_blrgy")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Holly3Flipped" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.907118
+anchor_top = -0.029321
+anchor_right = 1.04774
+anchor_bottom = 0.242284
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_qp335")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Cupcake" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0876736
+anchor_top = 0.356481
+anchor_right = 0.131076
+anchor_bottom = 0.438272
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.150098
+texture = ExtResource("12_rif3n")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="StockingFull" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0546875
+anchor_top = 0.384259
+anchor_right = 0.145833
+anchor_bottom = 0.655864
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.167552
+texture = ExtResource("13_f0blx")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Tree" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.164062
+anchor_top = 0.231481
+anchor_right = 0.401042
+anchor_bottom = 0.981481
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_cfuae")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Candycane" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.166667
+anchor_top = 0.652778
+anchor_right = 0.194444
+anchor_bottom = 0.765432
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.263545
+texture = ExtResource("15_sp5t2")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Candycane3" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.239583
+anchor_top = 0.45679
+anchor_right = 0.267361
+anchor_bottom = 0.569444
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0750492
+texture = ExtResource("15_sp5t2")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Candycane2" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.315104
+anchor_top = 0.641975
+anchor_right = 0.342882
+anchor_bottom = 0.75463
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.188496
+texture = ExtResource("15_sp5t2")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PresentBlG3" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.409722
+anchor_top = 0.763889
+anchor_right = 0.525174
+anchor_bottom = 0.979938
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_rubbm")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PresentBrG1" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.561632
+anchor_top = 0.82716
+anchor_right = 0.631944
+anchor_bottom = 0.981481
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_jh6rq")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PresentPrY3" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.638021
+anchor_top = 0.567901
+anchor_right = 0.763021
+anchor_bottom = 0.856481
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_ifpdk")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="PresentGO2" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.664931
+anchor_top = 0.814815
+anchor_right = 0.789931
+anchor_bottom = 0.978395
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_twshw")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="YBl1" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.901042
+anchor_top = 0.32716
+anchor_right = 0.983507
+anchor_bottom = 0.512345
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.706858
+texture = ExtResource("20_cpilx")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="PresentWR2" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.703993
+anchor_top = 0.371914
+anchor_right = 0.886285
+anchor_bottom = 0.591049
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.293215
+texture = ExtResource("21_lka1a")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="HighScoresButtonControl/EndGameButton" to="." method="_on_end_game_button_pressed"]
+[connection signal="pressed" from="HighScoresControl/Background/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="MainMenuControl/ColorRect/TextureRect/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainMenuControl/ColorRect/TextureRect/VBoxContainer/HighScoresButton" to="." method="_on_high_scores_button_pressed"]

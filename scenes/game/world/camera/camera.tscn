@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctiq6viks78rn"]
+
+[ext_resource type="Script" path="res://scenes/game/world/camera/camera.gd" id="1_6calk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmorl"]
+size = Vector2(1164, 107)
+
+[node name="Camera2D" type="Camera2D"]
+position = Vector2(576, 324)
+position_smoothing_enabled = true
+script = ExtResource("1_6calk")
+
+[node name="TopScrollArea" type="Area2D" parent="."]
+position = Vector2(0, -274)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopScrollArea"]
+shape = SubResource("RectangleShape2D_lmorl")
+
+[node name="BottomScrollArea" type="Area2D" parent="."]
+position = Vector2(0, 276)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomScrollArea"]
+shape = SubResource("RectangleShape2D_lmorl")

@@ -1,0 +1,17 @@
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://befktodggruup"]
+
+[resource]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.25098, 0.329412, 0.0941176, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_bottom_right = 16
+expand_margin_left = 14.0
+expand_margin_right = 14.0

@@ -1,0 +1,3 @@
+FIXED: Weird physics when sped up, by changing Engine.physics_ticks_per_second to (Engine.time_scale * 60)
+
+FIXED: Couldn't click on presents after adding UI. Fixed by changing Mouse->Filter to Ignore or Pass (not Stop) on all UI elements.

@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcaq7ya0335ms"]
+
+[ext_resource type="Script" path="res://scenes/game/ui/high_score_entry.gd" id="1_x40l0"]
+[ext_resource type="StyleBox" uid="uid://c7gu1ssuvhxc8" path="res://scenes/game/ui/button-stylebox.tres" id="2_nduno"]
+
+[node name="HighScoreEntry" type="HBoxContainer"]
+size_flags_horizontal = 4
+theme_override_constants/separation = 46
+script = ExtResource("1_x40l0")
+
+[node name="RankLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(24, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.956863, 0.956863, 0.956863, 1)
+theme_override_styles/normal = ExtResource("2_nduno")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="NameLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(484, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.956863, 0.956863, 0.956863, 1)
+theme_override_styles/normal = ExtResource("2_nduno")
+text = "My name is James, I'm carrying the wheel. "
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="ScoreLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.956863, 0.956863, 0.956863, 1)
+theme_override_styles/normal = ExtResource("2_nduno")
+text = "13 ft 17 in / 2342 cm"
+horizontal_alignment = 2
+vertical_alignment = 1

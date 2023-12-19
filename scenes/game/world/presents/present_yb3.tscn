@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx4eiqgmk2ncw"]
+
+[ext_resource type="Script" path="res://scenes/game/world/presents/present.gd" id="1_cd5nh"]
+[ext_resource type="Texture2D" uid="uid://wxw3opdxqbvu" path="res://assets/visual/Christmasassetpack/presents/pngs/outlined/yellow-blue-ribbon-3.png" id="2_mcvuf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xuhx1"]
+size = Vector2(116, 121)
+
+[node name="Present-YB3" type="RigidBody2D"]
+collision_layer = 3
+collision_mask = 3
+input_pickable = true
+script = ExtResource("1_cd5nh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.305344, 0.304805)
+texture = ExtResource("2_mcvuf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16.5)
+shape = SubResource("RectangleShape2D_xuhx1")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
