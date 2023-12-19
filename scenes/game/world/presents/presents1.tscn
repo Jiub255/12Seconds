@@ -9,18 +9,21 @@
 [node name="Presents" type="Node2D"]
 
 [node name="Present-BG1" parent="." instance=ExtResource("1_j48il")]
-position = Vector2(171, 297)
+position = Vector2(911, 170)
 
-[node name="Present-BG2" parent="." instance=ExtResource("2_enqyf")]
+[node name="Present-GO1" parent="." instance=ExtResource("2_enqyf")]
+
+[node name="Present-GO2" parent="." instance=ExtResource("2_enqyf")]
+position = Vector2(1024, 530)
 
 [node name="Present-BG3" parent="." instance=ExtResource("1_j48il")]
 position = Vector2(144, 572)
 
 [node name="Present-WR1" parent="." instance=ExtResource("2_hdxfg")]
-position = Vector2(256, 162)
+position = Vector2(937, 367)
 
 [node name="Present-WR2" parent="." instance=ExtResource("2_hdxfg")]
-position = Vector2(318, 315)
+position = Vector2(393, 293)
 
 [node name="Present-WR3" parent="." instance=ExtResource("2_hdxfg")]
 position = Vector2(626, 556)
@@ -29,7 +32,7 @@ position = Vector2(626, 556)
 position = Vector2(490, 435)
 
 [node name="Present-YB4" parent="." instance=ExtResource("3_dl3ii")]
-position = Vector2(150, 41)
+position = Vector2(179, 364)
 
 [node name="Present-PrY2" parent="." instance=ExtResource("4_wnmkw")]
-position = Vector2(563, 225)
+position = Vector2(541, 115)

@@ -241,6 +241,7 @@ func format_height(height : int) -> String:
 			ft_in_str = str(feet) + " ft"
 		else:
 			ft_in_str = str(feet) + " ft " + str(inches) + " in"
-	var cm : int = roundi(height * 0.34302)
+	#var cm : int = roundi(height * 0.34302)
+	var cm : int = roundi(height_inches * 2.54)
 	var cm_str = str(cm) + " cm"
 	return ft_in_str + " / " + cm_str

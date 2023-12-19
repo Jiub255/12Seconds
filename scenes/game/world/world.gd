@@ -91,8 +91,8 @@ func _physics_process(delta: float) -> void:
 
 
 func format_height(height : int) -> String:
+	var height_inches : int = roundi(height * 0.13504)
 	if measurement == measurements.FEET:
-		var height_inches : int = roundi(height * 0.13504)
 		var feet : int = floori(height_inches / 12)
 		var inches : int = height_inches % 12
 		if feet == 0:
@@ -102,7 +102,8 @@ func format_height(height : int) -> String:
 		else:
 			return str(feet) + " ft " + str(inches) + " in"
 	else:
-		var cm : int = roundi(height * 0.34302)
+		#var cm : int = roundi(height * 0.34302)
+		var cm : int = roundi(height_inches * 2.54)
 		return str(cm) + " cm"
 
 
