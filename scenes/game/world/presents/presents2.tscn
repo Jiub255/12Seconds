@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmhhcs0gl51jb"]
+
+[ext_resource type="PackedScene" uid="uid://dgcxec0pgw3hh" path="res://scenes/game/world/presents/present_bg1.tscn" id="1_ehhxx"]
+[ext_resource type="PackedScene" uid="uid://c7tgtihrw2rb6" path="res://scenes/game/world/presents/present_wr2.tscn" id="2_fuuie"]
+[ext_resource type="PackedScene" uid="uid://dha76ekp26brc" path="res://scenes/game/world/presents/present_go1.tscn" id="3_jixao"]
+[ext_resource type="PackedScene" uid="uid://bwxs0ds38sk7a" path="res://scenes/game/world/presents/present_pry2.tscn" id="4_bumuh"]
+[ext_resource type="PackedScene" uid="uid://dx4eiqgmk2ncw" path="res://scenes/game/world/presents/present_yb3.tscn" id="5_jo16t"]
+
+[node name="Presents" type="Node2D"]
+
+[node name="Present-BG1-1" parent="." instance=ExtResource("1_ehhxx")]
+position = Vector2(210, 474)
+
+[node name="Present-BG1-2" parent="." instance=ExtResource("1_ehhxx")]
+position = Vector2(931, 462)
+
+[node name="Present-WR1-1" parent="." instance=ExtResource("2_fuuie")]
+position = Vector2(689, 580)
+
+[node name="Present-WR1-2" parent="." instance=ExtResource("2_fuuie")]
+position = Vector2(432, 444)
+
+[node name="Present-GO1-1" parent="." instance=ExtResource("3_jixao")]
+position = Vector2(698, 457)
+
+[node name="Present-GO1-2" parent="." instance=ExtResource("3_jixao")]
+position = Vector2(94, 559)
+
+[node name="Present-PrY2-1" parent="." instance=ExtResource("4_bumuh")]
+position = Vector2(1013, 558)
+
+[node name="Present-PrY2-2" parent="." instance=ExtResource("4_bumuh")]
+position = Vector2(438, 556)
+
+[node name="Present-YB3-1" parent="." instance=ExtResource("5_jo16t")]
+position = Vector2(407, 333)
+
+[node name="Present-YB3-2" parent="." instance=ExtResource("5_jo16t")]
+position = Vector2(239, 569)

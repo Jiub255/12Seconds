@@ -10,9 +10,10 @@ var _high_scores : Array[Dictionary]
 var _entry_submit_instance : HighScoreEntrySubmit
 var _stack_height_px : int
 
-@onready var _high_scores_vbox : VBoxContainer = $Background/VBoxContainer
-@onready var play_again_button : Button = $Background/PlayAgainButton
-@onready var loading_label: Label = $Background/LoadingLabel
+@onready var _high_scores_vbox : VBoxContainer = $ColorRect/Background/VBoxContainer
+@onready var play_again_button : Button = $ColorRect/Background/PlayAgainButton
+@onready var loading_label: Label = $ColorRect/Background/LoadingLabel
+@onready var _audio_stream_player : AudioStreamPlayer = $AudioStreamPlayer
 
 var game_API_key = "dev_98a7bbf4a27646589bf17d30735891b5"
 var development_mode = true
@@ -27,9 +28,17 @@ var submit_score_http = HTTPRequest.new()
 
 var _player_identifier : String
 
+var _submit_pressed : bool = false
+
 
 func _ready() -> void:
 	login()
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Submit") and !_submit_pressed and _entry_submit_instance:
+		_submit_pressed = true
+		_on_submit_pressed()
 
 
 func login() -> void:
@@ -42,12 +51,11 @@ func login() -> void:
 	# Create a HTTPRequest node for authentication
 	auth_http = HTTPRequest.new()
 	add_child(auth_http)
-	# TODO: Is self. needed in the connect method?
 	auth_http.request_completed.connect(_on_authentication_request_completed)
 	# Send request
 	auth_http.request("https://api.lootlocker.io/game/v2/session/guest", headers, HTTPClient.METHOD_POST, str(data))
 	# Print what we're sending, for debugging purposes:
-	print("Sent data: " + str(data))
+	#print("Sent data: " + str(data))
 
 	# Clear high score ui.
 	for child in _high_scores_vbox.get_children():
@@ -59,19 +67,16 @@ func login() -> void:
 func _on_authentication_request_completed(result, response_code, headers, body) -> void:
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
+
 	## Save player_identifier to file
-	#var file = File.new()
-	#file.open("user://LootLocker.data", File.WRITE)
-	#file.store_string(json.result.player_identifier)
-	#file.close()
 	_player_identifier = json.data["player_identifier"]
 
 	# Save session_token to memory
 	session_token = json.data["session_token"]
-	print("Session token: " + str(session_token))
+	#print("Session token: " + str(session_token))
 
 	# Print server response
-	print("Response: " + str(json.data))
+	#print("Response: " + str(json.data))
 
 	# Clear node
 	auth_http.queue_free()
@@ -80,14 +85,13 @@ func _on_authentication_request_completed(result, response_code, headers, body) 
 
 
 func get_scores() -> void:
-	print("Getting leaderboards")
+	#print("Getting leaderboards")
 	var url = "https://api.lootlocker.io/game/leaderboards/"+leaderboard_key+"/list?count=10"
 	var headers = ["Content-Type: application/json", "x-session-token:" + session_token]
 
 	# Create a request node for getting the highscore
 	leaderboard_http = HTTPRequest.new()
 	add_child(leaderboard_http)
-	# TODO: Is self. needed in the connect method?
 	leaderboard_http.request_completed.connect(_on_leaderboard_request_completed)
 	# Send request
 	leaderboard_http.request(url, headers, HTTPClient.METHOD_GET, "")
@@ -98,7 +102,7 @@ func _on_leaderboard_request_completed(result, response_code, headers, body) -> 
 	json.parse(body.get_string_from_utf8())
 
 	# Print data
-	print("Leaderboard request completed data: " + str(json.data))
+	#print("Leaderboard request completed data: " + str(json.data))
 
 	_high_scores.clear()
 
@@ -106,18 +110,18 @@ func _on_leaderboard_request_completed(result, response_code, headers, body) -> 
 	var rank : String
 	var player_name : String
 	var score : String
-	print("size: " + str(json.data["items"].size()))
+	#print("size: " + str(json.data["items"].size()))
 	for n in json.data["items"].size():
 		rank = str(json.data["items"][n]["rank"])
 		player_name = json.data["items"][n]["metadata"]
 		score = str(json.data["items"][n]["score"])
 
 		# Print the formatted leaderboard to the console
-		print("Rank: " + rank + ", Name: " + player_name + ", Score: " + score)
+		#print("Rank: " + rank + ", Name: " + player_name + ", Score: " + score)
 
 		_high_scores.append({ "rank" = rank, "name" = player_name, "score" = score})
 
-	print("High scores: " + str(_high_scores))
+	#print("High scores: " + str(_high_scores))
 
 	# Clear node
 	leaderboard_http.queue_free()
@@ -126,9 +130,6 @@ func _on_leaderboard_request_completed(result, response_code, headers, body) -> 
 	play_again_button.show()
 
 
-# TODO: Need to split into if _high_scores.size() < 10 and else.
-# Because if < 10, then it needs to add an extra entry to account for the new one,
-# but not if there's already ten.
 func _setup_entries(rank : int = 42069, score : int = 0) -> void:
 	for child in _high_scores_vbox.get_children():
 		child.queue_free()
@@ -157,14 +158,12 @@ func _setup_entries(rank : int = 42069, score : int = 0) -> void:
 			_entries.append(entry_instance)
 		elif rank == i:
 			_entry_submit_instance = _entry_submit_resource.instantiate()
-			# TODO: Is there a better way to do this without get_node?
-			#var button : Button = _entry_submit_instance.get_node("SubmitButton")
-			#var high_score : Dictionary = { "rank": str(rank), "score": str(score)}
 			if i > 1:
 				var previous_score : Dictionary = _high_scores[i - 2]
 				if str(score) == previous_score["score"]:
 					rank_offset -= 1
 			_entry_submit_instance.setup_entry(str(rank + rank_offset), format_height(score))
+			_entry_submit_instance.focus()
 			_entry_submit_instance.submit_button.pressed.connect(_on_submit_pressed)
 			_high_scores_vbox.add_child(_entry_submit_instance)
 			_entries.append(_entry_submit_instance)
@@ -184,7 +183,6 @@ func _setup_entries(rank : int = 42069, score : int = 0) -> void:
 
 
 func _upload_score(player_name : String, score : int) -> void:
-	# TODO: What form should this data be in? Needs _player_identifier?
 	var data = { "member_id": _player_identifier, "score": score, "metadata": player_name }
 	var headers = ["Content-Type: application/json", "x-session-token:" + session_token]
 	submit_score_http = HTTPRequest.new()
@@ -193,14 +191,14 @@ func _upload_score(player_name : String, score : int) -> void:
 	# Send request
 	submit_score_http.request("https://api.lootlocker.io/game/leaderboards/" + leaderboard_key + "/submit", headers, HTTPClient.METHOD_POST, str(data))
 	# Print what we're sending, for debugging purposes:
-	print("Submit score data: " + str(data))
+	#print("Submit score data: " + str(data))
 
 
 func _on_upload_score_request_completed(result, response_code, headers, body) -> void:
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	# Print data
-	print("Score request completed data: " + str(json.data))
+	#print("Score request completed data: " + str(json.data))
 	# Clear node
 	submit_score_http.queue_free()
 	# Reload the menu with the new scores.
@@ -215,9 +213,26 @@ func check_score(stack_height_px : int) -> void:
 	_stack_height_px = stack_height_px
 
 
+# Don't let user submit a blank name.
 # Call from pressing submit (or maybe enter) from high score entry submit scene.
 func _on_submit_pressed() -> void:
-	_upload_score(_entry_submit_instance.line_edit.text, _stack_height_px)
+	if _entry_submit_instance.line_edit.text == "":
+		# TODO: Show a "no blank names" popup or something.
+		_entry_submit_instance.line_edit.placeholder_text = "Name must be non-empty"
+	else:
+		_audio_stream_player.play()
+		_upload_score(_entry_submit_instance.line_edit.text, _stack_height_px)
+		_hide_submit_button()
+
+
+func _hide_submit_button() -> void:
+	_entry_submit_instance.hidden_button.queue_free()
+	_entry_submit_instance.submit_button.queue_free()
+	#var styles = ["normal", "hover", "pressed"]
+	#for style in styles:
+		#var hidden_stylebox : StyleBox = _entry_submit_instance.hidden_button.get_theme_stylebox(style)
+		#_entry_submit_instance.submit_button.add_theme_stylebox_override(style, hidden_stylebox)
+		#_entry_submit_instance.submit_button.add_theme_color_override("font_color", Color(0, 0, 0, 0))
 
 
 func get_rank(stack_height_px : int) -> int:

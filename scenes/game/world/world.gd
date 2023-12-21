@@ -44,14 +44,27 @@ var _stack_height : int
 
 var _started : bool = false
 
+var _sfx_repeat_timer : float
+const SFX_REPEAT_TIME : float = 0.1
+const PITCH_INCREASE_MULTIPLIER : float = 1.015
+@onready var _audio_player : AudioStreamPlayer = $RayCast2D/AudioStreamPlayer
+var _height_counter_sound = preload("res://assets/audio/sfx/height_counter.wav")
+
 
 func _ready() -> void:
 	game_timer = TIMELIMIT
 	tick.emit(game_timer)
+	_audio_player.stream = _height_counter_sound
+	_audio_player.volume_db = -15
+	_sfx_repeat_timer = 0
 
 
 func _on_start_game() -> void:
 	_started = true
+	$Camera2D.started = true
+
+	for present : Present in presents.get_children():
+		present.started = true
 
 
 func _process(delta: float) -> void:
@@ -80,6 +93,12 @@ func _physics_process(delta: float) -> void:
 			waited_one_physics_tick = true
 			return
 
+		_sfx_repeat_timer -= delta
+		if _sfx_repeat_timer <= 0:
+			_sfx_repeat_timer = SFX_REPEAT_TIME
+			_audio_player.pitch_scale *= PITCH_INCREASE_MULTIPLIER
+			_audio_player.play()
+
 		raycast.position.y -= RAYCAST_STEP_HEIGHT
 		_stack_height = -raycast.position.y + ProjectSettings.get_setting("display/window/size/viewport_height")
 		var height : String = format_height(_stack_height)
@@ -87,7 +106,7 @@ func _physics_process(delta: float) -> void:
 		if !raycast.is_colliding():
 			done_measuring.emit(_stack_height)
 			finding_height = false
-			print("Stack Height: " + str(_stack_height))
+			#print("Stack Height: " + str(_stack_height))
 
 
 func format_height(height : int) -> String:

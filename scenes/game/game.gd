@@ -11,10 +11,10 @@ var ui_resource : PackedScene = preload("res://scenes/game/ui/ui.tscn")
 var world_resource : PackedScene = preload("res://scenes/game/world/world.tscn")
 
 func _ready() -> void:
-	print(str(world.tick.is_connected(ui.on_tick)))
+	#print(str(world.tick.is_connected(ui.on_tick)))
 	if !world.tick.is_connected(ui.on_tick):
 		world.tick.connect(ui.on_tick)
-	print(str(world.tick.is_connected(ui.on_tick)))
+	#print(str(world.tick.is_connected(ui.on_tick)))
 	if !world.gameover.is_connected(ui.on_gameover):
 		world.gameover.connect(ui.on_gameover)
 	if !world.height_counter.is_connected(ui.on_height_counter):

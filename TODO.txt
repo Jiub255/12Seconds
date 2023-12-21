@@ -1,3 +1,11 @@
+FIX: Sometimes the game starts out with a black screen.
+	Not sure why, happens randomly it seems. Maybe a race condition?
+
+FIX: Sometimes the height counter doesn't start when the timer ends. The game just kinds stops, but the music is still playing.
+	Again, not sure why. Happens randomly it seems.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
 FIXED: Weird physics when sped up, by changing Engine.physics_ticks_per_second to (Engine.time_scale * 60)
 
 FIXED: Couldn't click on presents after adding UI. Fixed by changing Mouse->Filter to Ignore or Pass (not Stop) on all UI elements.

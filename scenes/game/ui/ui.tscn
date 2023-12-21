@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cumh0031c7ka3"]
+[gd_scene load_steps=25 format=3 uid="uid://cumh0031c7ka3"]
 
 [ext_resource type="Script" path="res://scenes/game/ui/ui.gd" id="1_7lthn"]
 [ext_resource type="Texture2D" uid="uid://dcskljcd6bixe" path="res://assets/visual/Christmasassetpack/round-ice-buttons/no-snow/blank.png" id="2_72jp6"]
@@ -32,6 +32,9 @@ font_size = 50
 font_color = Color(0.835294, 1, 0.843137, 1)
 outline_size = 7
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_6k7kq"]
+data = PackedByteArray(34, 38, 215, 5, 33, 212, 243, 194, 13, 234, 4, 62, 250, 30, 194, 45, 64, 187, 204, 29, 14, 254, 53, 148, 45, 246, 183, 36, 210, 45, 249, 41, 41, 211, 242, 13, 75, 212, 25, 231, 207, 36, 47, 153, 38, 60, 196, 77, 233, 194, 9, 32, 252, 13, 250, 238, 35, 252, 3, 203, 29, 205, 25, 226, 48, 220, 44, 221, 242, 35, 45, 249, 203, 14, 8, 214, 13, 247, 227, 31, 13, 23, 26, 209, 211, 31, 54, 16, 242, 246, 30, 179, 12, 233, 9, 225, 56, 254, 56, 204, 56, 248, 246, 2, 242, 219, 30, 239, 195, 31, 238, 27, 251, 252, 230, 46, 10, 7, 221, 14, 10, 4, 1, 198, 225, 29, 39, 198, 61, 235, 242, 251, 79, 245, 245, 177, 43, 231, 246, 2, 248, 3, 41, 233, 223, 43, 204, 245, 28, 46, 5, 205, 63, 218, 10, 243, 37, 245, 209, 37, 9, 238, 232, 233, 30, 23, 239, 254, 31, 229, 250, 238, 233, 3, 34, 34, 252, 246, 215, 3, 229, 71, 8, 225, 227, 17, 32, 4, 222, 27, 201, 247, 12, 20, 230, 217, 26, 228, 34, 19, 40, 248, 232, 45, 253, 4, 246, 233, 14, 201, 24, 46, 253, 204, 231, 9, 7, 215, 70, 8, 12, 23, 243, 202, 20, 8, 11, 18, 233, 254, 0, 245, 14, 28, 246, 194, 251, 232, 31, 38, 255, 245, 236, 206, 40, 35, 238, 230, 17, 227, 13, 59, 23, 203, 231, 254, 16, 240, 254, 16, 36, 11, 11, 237, 233, 229, 217, 75, 10, 247, 251, 8, 217, 254, 216, 28, 5, 25, 245, 230, 232, 50, 4, 214, 35, 9, 2, 226, 215, 236, 16, 1, 37, 36, 228, 239, 7, 11, 5, 7, 7, 205, 14, 35, 233, 26, 226, 19, 13, 11, 232, 223, 22, 253, 235, 235, 54, 11, 3, 228, 216, 54, 2, 14, 249, 11, 10, 227, 253, 8, 233, 236, 247, 30, 25, 10, 20, 219, 246, 247, 252, 230, 16, 248, 16, 24, 253, 230, 28, 238, 246, 4, 228, 9, 17, 252, 222, 37, 235, 30, 217, 40, 230, 26, 246, 233, 224, 12, 255, 12, 244, 234, 13, 43, 251, 12, 250, 224, 9, 3, 229, 26, 45, 238, 245, 25, 229, 220, 33, 18, 239, 253, 249, 239, 31, 220, 14, 16, 230, 7, 252, 247, 234, 47, 11, 243, 242, 238, 234, 43, 14, 0, 1, 240, 248, 224, 3, 40, 235, 6, 232, 20, 24, 4, 240, 230, 18, 32, 209, 15, 241, 254, 39, 247, 15, 229, 10, 249, 242, 229, 14, 14, 17, 242, 243, 251, 26, 230, 242, 34, 254, 17, 235, 2, 253, 253, 239, 242, 41, 237, 242, 35, 1, 243, 235, 254, 15, 243, 249, 251, 15, 242, 13, 255, 248, 41, 228, 238, 18, 250, 15, 16, 17, 220, 249, 9, 9, 232, 248, 245, 6, 14, 13, 8, 254, 237, 7, 236, 16, 246, 6, 245, 10, 243, 3, 243, 45, 8, 14, 211, 16, 242, 4, 2, 252, 217, 6, 248, 252, 9, 6, 4, 248, 255, 242, 29, 9, 25, 246, 232, 3, 9, 253, 237, 31, 5, 222, 38, 242, 241, 3, 23, 254, 234, 23, 225, 18, 249, 19, 255, 238, 0, 7, 14, 218, 234, 21, 252, 239, 26, 251, 248, 15, 244, 7, 6, 250, 5, 245, 14, 21, 252, 224, 235, 249, 241, 9, 16, 23, 16, 238, 239, 27, 1, 247, 225, 27, 3, 233, 253, 21, 0, 235, 17, 233, 4, 13, 23, 252, 228, 248, 24, 236, 255, 2, 4, 19, 253, 229, 32, 254, 255, 252, 248, 252, 9, 246, 231, 245, 15, 246, 4, 15, 248, 8, 12, 254, 247, 255, 26, 9, 244, 247, 246, 12, 11, 248, 249, 240, 240, 9, 17, 251, 2, 225, 237, 2, 26, 24, 11, 215, 28, 244, 235, 12, 247, 246, 5, 23, 2, 247, 3, 5, 6, 4, 236, 241, 1, 15, 246, 12, 254, 255, 239, 6, 249, 11, 25, 234, 12, 3, 231, 6, 3, 10, 244, 248, 22, 247, 252, 242, 16, 5, 233, 239, 23, 19, 1, 236, 9, 242, 242, 243, 21, 17, 10, 225, 8, 2, 247, 254, 19, 20, 251, 246, 4, 234, 9, 247, 5, 3, 239, 7, 243, 16, 255, 252, 10, 4, 246, 14, 243, 248, 247, 247, 0, 8, 11, 21, 243, 244, 11, 242, 249, 248, 26, 9, 234, 244, 6, 8, 240, 12, 14, 242, 236, 15, 254, 2, 5, 5, 9, 12, 1, 6, 245, 245, 2, 235, 255, 4, 6, 254, 7, 249, 15, 9, 230, 245, 255, 4, 249, 2, 250, 2, 6, 244, 17, 253, 2, 246, 244, 12, 3, 252, 254, 3, 245, 5, 5, 247, 247, 251, 255, 10, 6, 254, 249, 254, 249, 254, 15, 250, 243, 24, 250, 244, 251, 7, 16, 252, 248, 248, 7, 250, 249, 12, 13, 7, 232, 3, 250, 7, 6, 253, 253, 246, 254, 17, 250, 255, 4, 255, 240, 255, 13, 250, 10, 247, 241, 15, 12, 249, 247, 253, 17, 249, 245, 249, 7, 251, 7, 12, 246, 255, 245, 254, 3, 3, 249, 254, 255, 7, 10, 7, 248, 8, 3, 255, 5, 252, 249, 249, 2, 246, 5, 254, 2, 7, 245, 252, 244, 9, 15, 0, 251, 244, 10, 252, 1, 253, 246, 9, 3, 253, 246, 11, 2, 245, 4, 2, 251, 7, 2, 255, 247, 7, 251, 251, 252, 247, 7, 3, 250, 6, 10, 254, 246, 5, 247, 255, 4, 6, 251, 253, 1, 247, 250, 12, 7, 250, 252, 252, 0, 1, 251, 7, 11, 253, 244, 5, 5, 6, 250, 2, 250, 252, 0, 251, 6, 248, 254, 2, 0, 4, 251, 251, 10, 254, 4, 1, 250, 250, 252, 6, 255, 3, 254, 255, 6, 252, 5, 252, 254, 5, 6, 247, 255, 4, 249, 249, 6, 3, 250, 7, 246, 249, 3, 1, 2, 249, 1, 251, 252, 4, 5, 248, 3, 9, 3, 247, 2, 255, 3, 254, 249, 4, 3, 254, 251, 252, 253, 255, 8, 4, 0, 251, 250, 6, 255, 254, 249, 253, 2, 2, 4, 2, 254, 253, 254, 252, 0, 7, 255, 252, 4, 0, 251, 252, 0, 255, 4, 4, 0, 252, 253, 3, 250, 2, 2, 252, 3, 253, 255, 3, 251, 2, 255, 0, 0, 255, 254, 0, 5, 255, 1, 254, 252, 253, 3, 2, 254, 252, 2, 0, 255, 254, 255, 254, 4, 254, 254, 3, 254, 1, 254, 254, 3, 255, 0, 255, 0, 0, 0, 254, 0, 254, 1, 255, 255, 0, 0, 0, 253, 255, 2, 254, 254, 0, 1, 255, 0, 0, 255, 0, 254, 0, 254, 255, 0, 255, 0, 0, 0, 255, 255, 0, 255, 0, 255, 0, 0, 255, 0, 255, 0, 255, 0, 0, 255, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ko05i"]
 content_margin_left = 24.0
@@ -140,7 +143,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_yy52r")
 
-[node name="Background" type="TextureRect" parent="HighScoresControl"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HighScoresControl"]
+stream = SubResource("AudioStreamWAV_6k7kq")
+
+[node name="ColorRect" type="ColorRect" parent="HighScoresControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="TextureRect" parent="HighScoresControl/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -150,7 +165,7 @@ grow_vertical = 2
 texture = ExtResource("3_7q3id")
 expand_mode = 1
 
-[node name="HighScoresTitle" type="Label" parent="HighScoresControl/Background"]
+[node name="HighScoresTitle" type="Label" parent="HighScoresControl/ColorRect/Background"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.118827
@@ -164,7 +179,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="LoadingLabel" type="Label" parent="HighScoresControl/Background"]
+[node name="LoadingLabel" type="Label" parent="HighScoresControl/ColorRect/Background"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -185,7 +200,7 @@ text = "Loading scores..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HighScoresControl/Background"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HighScoresControl/ColorRect/Background"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.223765
@@ -196,7 +211,7 @@ grow_vertical = 2
 theme_override_constants/separation = 7
 metadata/_edit_use_anchors_ = true
 
-[node name="PlayAgainButton" type="Button" parent="HighScoresControl/Background"]
+[node name="PlayAgainButton" type="Button" parent="HighScoresControl/ColorRect/Background"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -211,6 +226,59 @@ theme_override_styles/hover = ExtResource("4_tphic")
 theme_override_styles/pressed = ExtResource("5_v6bgh")
 text = "Main
 Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="DecorationsControl" type="Control" parent="HighScoresControl/ColorRect/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Holly3" type="TextureRect" parent="HighScoresControl/ColorRect/Background/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0390625
+anchor_top = -0.037037
+anchor_right = 0.101562
+anchor_bottom = 0.234568
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_qp335")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Holly2" type="TextureRect" parent="HighScoresControl/ColorRect/Background/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.425347
+anchor_top = -0.0200617
+anchor_right = 0.577257
+anchor_bottom = 0.157407
+offset_left = 0.000244141
+offset_top = -8.0
+offset_right = 0.000244141
+offset_bottom = -7.99999
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_blrgy")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Holly3Flipped" type="TextureRect" parent="HighScoresControl/ColorRect/Background/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.907118
+anchor_top = -0.029321
+anchor_right = 1.04774
+anchor_bottom = 0.242284
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_qp335")
+expand_mode = 1
+flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="MeasurementControl" type="Control" parent="."]
@@ -296,12 +364,12 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("8_k3uo7")
-text = "12 Second Stack"
+text = "Bussin' Stackz: An Orphan's Tale"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/VBoxContainer"]
-custom_minimum_size = Vector2(5, 25)
+custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
 
 [node name="PlayButton" type="Button" parent="MainMenuControl/ColorRect/TextureRect/VBoxContainer"]
@@ -326,6 +394,17 @@ theme_override_styles/normal = ExtResource("9_py7vn")
 theme_override_styles/hover = ExtResource("4_tphic")
 theme_override_styles/pressed = ExtResource("5_v6bgh")
 text = "High Scores"
+
+[node name="InfoButton" type="Button" parent="MainMenuControl/ColorRect/TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = ExtResource("9_py7vn")
+theme_override_styles/hover = ExtResource("4_tphic")
+theme_override_styles/pressed = ExtResource("5_v6bgh")
+text = "Info"
 
 [node name="DecorationsControl" type="Control" parent="MainMenuControl/ColorRect/TextureRect"]
 layout_mode = 1
@@ -356,6 +435,10 @@ anchor_left = 0.425347
 anchor_top = -0.0138889
 anchor_right = 0.577257
 anchor_bottom = 0.16358
+offset_left = 0.000244141
+offset_top = -12.0
+offset_right = 0.000244141
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("11_blrgy")
@@ -376,28 +459,14 @@ expand_mode = 1
 flip_h = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Cupcake" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0876736
-anchor_top = 0.356481
-anchor_right = 0.131076
-anchor_bottom = 0.438272
-grow_horizontal = 2
-grow_vertical = 2
-rotation = -0.150098
-texture = ExtResource("12_rif3n")
-expand_mode = 1
-flip_h = true
-metadata/_edit_use_anchors_ = true
-
 [node name="StockingFull" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0546875
-anchor_top = 0.384259
-anchor_right = 0.145833
-anchor_bottom = 0.655864
+anchor_left = 0.25
+anchor_top = 0.466785
+anchor_right = 0.341145
+anchor_bottom = 0.73839
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.167552
@@ -406,12 +475,32 @@ expand_mode = 1
 flip_h = true
 metadata/_edit_use_anchors_ = true
 
+[node name="Cupcake" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl/StockingFull"]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.282986
+anchor_top = 0.439007
+anchor_right = 0.326388
+anchor_bottom = 0.520798
+offset_left = 10.7563
+offset_top = -88.6761
+offset_right = 39.7512
+offset_bottom = -65.2013
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.150098
+texture = ExtResource("12_rif3n")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
 [node name="Tree" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.164062
+anchor_left = 0.00347222
 anchor_top = 0.231481
-anchor_right = 0.401042
+anchor_right = 0.240452
 anchor_bottom = 0.981481
 grow_horizontal = 2
 grow_vertical = 2
@@ -420,13 +509,17 @@ expand_mode = 1
 flip_h = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Candycane" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+[node name="Candycane" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl/Tree"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.166667
-anchor_top = 0.652778
-anchor_right = 0.194444
-anchor_bottom = 0.765432
+anchor_left = 0.0262297
+anchor_top = 0.649177
+anchor_right = 0.0540067
+anchor_bottom = 0.761831
+offset_left = -3.16075
+offset_top = -43.4998
+offset_right = 22.4841
+offset_bottom = -25.1546
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.263545
@@ -435,33 +528,41 @@ expand_mode = 1
 flip_h = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Candycane3" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+[node name="Candycane2" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl/Tree"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.239583
-anchor_top = 0.45679
-anchor_right = 0.267361
-anchor_bottom = 0.569444
+anchor_left = 0.163681
+anchor_top = 0.638375
+anchor_right = 0.191459
+anchor_bottom = 0.751029
+offset_left = 127.315
+offset_top = -45.2498
+offset_right = 152.21
+offset_bottom = -26.9052
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.188496
+texture = ExtResource("15_sp5t2")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Candycane3" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl/Tree"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0954863
+anchor_top = 0.455247
+anchor_right = 0.123264
+anchor_bottom = 0.567901
+offset_left = 60.9324
+offset_top = -75.2498
+offset_right = 86.577
+offset_bottom = -56.9047
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0750492
 texture = ExtResource("15_sp5t2")
 expand_mode = 1
 flip_h = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Candycane2" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.315104
-anchor_top = 0.641975
-anchor_right = 0.342882
-anchor_bottom = 0.75463
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 0.188496
-texture = ExtResource("15_sp5t2")
-expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="PresentBlG3" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
@@ -480,10 +581,10 @@ metadata/_edit_use_anchors_ = true
 [node name="PresentBrG1" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.561632
-anchor_top = 0.82716
-anchor_right = 0.631944
-anchor_bottom = 0.981481
+anchor_left = 0.265625
+anchor_top = 0.827161
+anchor_right = 0.335937
+anchor_bottom = 0.981482
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_jh6rq")
@@ -518,7 +619,7 @@ expand_mode = 1
 flip_h = true
 metadata/_edit_use_anchors_ = true
 
-[node name="YBl1" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
+[node name="PresentYBl1" type="TextureRect" parent="MainMenuControl/ColorRect/TextureRect/DecorationsControl"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.901042
@@ -548,7 +649,240 @@ expand_mode = 1
 flip_h = true
 metadata/_edit_use_anchors_ = true
 
+[node name="InfoControl" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="InfoControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="InfoControl/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7q3id")
+expand_mode = 1
+
+[node name="DecorationsControl" type="Control" parent="InfoControl/ColorRect/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Holly3" type="TextureRect" parent="InfoControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0390625
+anchor_top = -0.037037
+anchor_right = 0.101562
+anchor_bottom = 0.234568
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_qp335")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Holly2" type="TextureRect" parent="InfoControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.425347
+anchor_top = -0.0138889
+anchor_right = 0.577257
+anchor_bottom = 0.16358
+offset_left = 0.000244141
+offset_top = -12.0
+offset_right = 0.000244141
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_blrgy")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Holly3Flipped" type="TextureRect" parent="InfoControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.907118
+anchor_top = -0.029321
+anchor_right = 1.04774
+anchor_bottom = 0.242284
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_qp335")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Cupcake" type="TextureRect" parent="InfoControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0876736
+anchor_top = 0.356481
+anchor_right = 0.131076
+anchor_bottom = 0.438272
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.150098
+texture = ExtResource("12_rif3n")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="StockingFull" type="TextureRect" parent="InfoControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0546875
+anchor_top = 0.384259
+anchor_right = 0.145833
+anchor_bottom = 0.655864
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.167552
+texture = ExtResource("13_f0blx")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="StockingFull2" type="TextureRect" parent="InfoControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.838542
+anchor_top = 0.350309
+anchor_right = 0.929687
+anchor_bottom = 0.621914
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.137881
+texture = ExtResource("13_f0blx")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PresentBlG3" type="TextureRect" parent="InfoControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.241319
+anchor_top = 0.765432
+anchor_right = 0.356771
+anchor_bottom = 0.981481
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_rubbm")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PresentBrG1" type="TextureRect" parent="InfoControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.699653
+anchor_top = 0.703704
+anchor_right = 0.769965
+anchor_bottom = 0.858025
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_jh6rq")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PresentGO2" type="TextureRect" parent="InfoControl/ColorRect/TextureRect/DecorationsControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.653646
+anchor_top = 0.816358
+anchor_right = 0.778646
+anchor_bottom = 0.979938
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_twshw")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfoControl/ColorRect/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.160494
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="InstructionsTitleLabel" type="Label" parent="InfoControl/ColorRect/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Instructions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionsLabel" type="Label" parent="InfoControl/ColorRect/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Drag and drop presents using the right mouse button.
+Stack the presents as high as you can in twelve seconds.
+Scroll up or down by moving the mouse to the top or bottom of the screen."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpacingLabel" type="Label" parent="InfoControl/ColorRect/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsTitleLabel" type="Label" parent="InfoControl/ColorRect/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsLabel" type="Label" parent="InfoControl/ColorRect/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Game made with Godot
+Visual assets by Robert Brooks at gamedeveloperstudio.com
+Music made with Cakewalk
+Sound Effects made with jsfxr at sfxr.me"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpacingLabel2" type="Label" parent="InfoControl/ColorRect/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenuButton" type="Button" parent="InfoControl/ColorRect/TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("9_py7vn")
+theme_override_styles/hover = ExtResource("4_tphic")
+theme_override_styles/pressed = ExtResource("5_v6bgh")
+text = "Main Menu"
+
 [connection signal="pressed" from="HighScoresButtonControl/EndGameButton" to="." method="_on_end_game_button_pressed"]
-[connection signal="pressed" from="HighScoresControl/Background/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="HighScoresControl/ColorRect/Background/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
 [connection signal="pressed" from="MainMenuControl/ColorRect/TextureRect/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainMenuControl/ColorRect/TextureRect/VBoxContainer/HighScoresButton" to="." method="_on_high_scores_button_pressed"]
+[connection signal="pressed" from="MainMenuControl/ColorRect/TextureRect/VBoxContainer/InfoButton" to="." method="_on_info_button_pressed"]
+[connection signal="pressed" from="InfoControl/ColorRect/TextureRect/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

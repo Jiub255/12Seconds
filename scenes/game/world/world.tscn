@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://4gh0q2o0yvko" path="res://assets/visual/Christmasassetpack/christmas-ui/pngs/horizontal-2048-by-1536.png" id="2_3d1qt"]
 [ext_resource type="Texture2D" uid="uid://jpno8g10ybre" path="res://assets/visual/Christmasassetpack/christmas assets/outline/christmas-tree-with-outline.png" id="3_yajgs"]
 [ext_resource type="Texture2D" uid="uid://rtyi0cwgmcb0" path="res://assets/visual/Christmasassetpack/christmas assets/outline/candy-cane-with-outline.png" id="4_3a87j"]
-[ext_resource type="PackedScene" uid="uid://ddhvuuoinmkjc" path="res://scenes/game/world/presents/presents1.tscn" id="5_5obxk"]
+[ext_resource type="PackedScene" uid="uid://cmhhcs0gl51jb" path="res://scenes/game/world/presents/presents2.tscn" id="6_oy2qi"]
 [ext_resource type="PackedScene" uid="uid://ctiq6viks78rn" path="res://scenes/game/world/camera/camera.tscn" id="7_gbmdd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0n04q"]
@@ -46,7 +46,7 @@ texture = ExtResource("4_3a87j")
 offset = Vector2(31.56, 444)
 flip_h = true
 
-[node name="Presents" parent="." instance=ExtResource("5_5obxk")]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="RayCast2D"]
 
 [node name="Camera2D" parent="." instance=ExtResource("7_gbmdd")]
 position_smoothing_speed = 20.0
@@ -58,6 +58,15 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_0n04q")
+
+[node name="Ceiling" type="StaticBody2D" parent="."]
+position = Vector2(576, -787)
+scale = Vector2(1.015, 1.015)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
 shape = SubResource("RectangleShape2D_0n04q")
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
@@ -77,3 +86,5 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
 shape = SubResource("RectangleShape2D_7uifd")
+
+[node name="Presents" parent="." instance=ExtResource("6_oy2qi")]

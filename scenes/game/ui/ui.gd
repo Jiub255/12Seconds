@@ -14,10 +14,16 @@ signal start_game()
 @onready var _high_scores_button_control : Control = $HighScoresButtonControl
 @onready var _high_scores_control : HighScoresControl = $HighScoresControl
 @onready var _main_menu_control: Control = $MainMenuControl
+@onready var _info_control : Control = $InfoControl
 
+@onready var _audio_stream_player : AudioStreamPlayer = $HighScoresControl/AudioStreamPlayer
+var _button_sound = preload("res://assets/audio/sfx/click.wav")
 
 var _stack_height_px : int
 
+
+func _ready() -> void:
+	_audio_stream_player.stream = _button_sound
 
 
 func on_tick(time_left : float) -> void:
@@ -45,6 +51,9 @@ func on_done_measuring(height : int) -> void:
 
 
 func _on_end_game_button_pressed() -> void:
+	#print("end game button pressed")
+	_audio_stream_player.play()
+	#_main_menu_control.hide()
 	_height_control.hide()
 	_high_scores_button_control.hide()
 	_high_scores_control.show()
@@ -53,18 +62,37 @@ func _on_end_game_button_pressed() -> void:
 
 
 func _on_play_again_button_pressed() -> void:
-	# TODO: Send signal to game.gd to restart?
+	#print("play again button pressed")
+	# Send signal to top_level.gd through game.gd to restart.
 	restart.emit()
-	_main_menu_control.hide()
+	_audio_stream_player.play()
+	_main_menu_control.show()
+	_high_scores_control.hide()
 	start_game.emit()
 
 
 func _on_play_button_pressed() -> void:
+	#print("play button pressed")
+	_audio_stream_player.play()
 	_main_menu_control.hide()
 	start_game.emit()
 
 
 func _on_high_scores_button_pressed() -> void:
+	#print("high scores button pressed")
+	_audio_stream_player.play()
 	_main_menu_control.hide()
 	_high_scores_control.show()
 	_high_scores_control.login()
+
+
+func _on_info_button_pressed() -> void:
+	_audio_stream_player.play()
+	_main_menu_control.hide()
+	_info_control.show()
+
+
+func _on_main_menu_button_pressed() -> void:
+	_audio_stream_player.play()
+	_main_menu_control.show()
+	_info_control.hide()

@@ -1,21 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dhrg7m7sgqb3x"]
 
 [ext_resource type="Script" path="res://scenes/game/ui/high_score_entry_submit.gd" id="1_7btmo"]
+[ext_resource type="StyleBox" uid="uid://bbkeu82rou51x" path="res://scenes/game/ui/hidden.tres" id="2_i338k"]
 [ext_resource type="StyleBox" uid="uid://c7gu1ssuvhxc8" path="res://scenes/game/ui/button-stylebox.tres" id="2_u8so1"]
 [ext_resource type="StyleBox" uid="uid://biflp58s1tmrx" path="res://scenes/game/ui/button-stylebox-hover.tres" id="3_bjk0u"]
 [ext_resource type="StyleBox" uid="uid://dopj44xrked6g" path="res://scenes/game/ui/button-stylebox-pressed.tres" id="4_adfqw"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kni7"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.8, 0.8, 0.8, 0)
-corner_radius_top_left = 8
-corner_radius_bottom_right = 8
-expand_margin_left = 8.0
-expand_margin_right = 8.0
 
 [node name="HighScoreEntrySubmit" type="HBoxContainer"]
 size_flags_horizontal = 4
@@ -26,15 +15,17 @@ script = ExtResource("1_7btmo")
 layout_mode = 2
 mouse_filter = 2
 theme_override_colors/font_color = Color(0, 0, 0, 0)
-theme_override_styles/normal = SubResource("StyleBoxFlat_1kni7")
+theme_override_styles/normal = ExtResource("2_i338k")
+theme_override_styles/hover = ExtResource("2_i338k")
+theme_override_styles/pressed = ExtResource("2_i338k")
 text = "Submit"
 
 [node name="RankLabel" type="Label" parent="."]
-custom_minimum_size = Vector2(24, 40)
+custom_minimum_size = Vector2(28, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.956863, 0.956863, 0.956863, 1)
 theme_override_styles/normal = ExtResource("2_u8so1")
-text = "1"
+text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
 text_overrun_behavior = 3
